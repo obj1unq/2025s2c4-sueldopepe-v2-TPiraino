@@ -8,8 +8,8 @@ object pepe {
 
 	method sueldo() {
 		const netoLocal = self.neto()
-		const montoResultados = self.bonoResultadosActual().montoPara(self)
-		const montoPresentismo = self.bonoPresentismoActual().montoPara(self)
+		const montoResultados = self.bonoResultadosActual().montoPara()
+		const montoPresentismo = self.bonoPresentismoActual().montoPara()
 		return netoLocal + montoResultados + montoPresentismo
 	}
 }
@@ -57,7 +57,7 @@ object bonoPresentismoNormal {
 }
 object bonoPresentismoAjuste {
 	method montoPara(persona) {
-		if (persona.faltas() == 0) {
+		if (pepe.faltas() == 0) {
 			return 100
 		}
 		return 0
@@ -65,7 +65,7 @@ object bonoPresentismoAjuste {
 }
 object bonoPresentismoDemagogico {
 	method montoPara(persona) {
-		if (persona.neto() < 18000) {
+		if (pepe.neto() < 18000) {
 			return 500
 		}
 		return 300
